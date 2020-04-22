@@ -9,9 +9,8 @@ class WriteFile(object):
         self.filename = filename
     
     def write_line(self, text):
-        f = open(self.filename, 'a')
-        f.write(text +'\n')
-        f.close()
+        with open(self.filename, 'a') as f:
+            f.write(text +'\n')
 
     @abc.abstractmethod
     def write(self, msg):
