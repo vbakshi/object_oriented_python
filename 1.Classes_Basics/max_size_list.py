@@ -1,4 +1,8 @@
+import logging
+
 class MaxSizeList(object):
+
+    logging.basicConfig(level=logging.INFO)
 
     def __init__(self, max_size):
         self.res = []
@@ -14,7 +18,7 @@ class MaxSizeList(object):
     
     @staticmethod
     def check_max_size(size):
-        if ~isinstance(size, int) or size <= 0:
+        if (not isinstance(size, int)) or size <= 0:
             raise ValueError("Invalid max size: {} Please enter a positive integer for max size".format(size))
         else:
             return size
